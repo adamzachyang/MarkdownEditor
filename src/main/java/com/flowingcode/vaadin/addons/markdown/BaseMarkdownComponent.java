@@ -41,6 +41,7 @@ import com.vaadin.flow.function.SerializableConsumer;
 public class BaseMarkdownComponent extends ReactAdapterComponent implements HasSize {
   
   private String content;
+  private PreviewMode previewMode;
   
   /**
    * Base constructor that receives the content of the markdown component.
@@ -70,7 +71,26 @@ public class BaseMarkdownComponent extends ReactAdapterComponent implements HasS
     this.content = content;
     setState("content", content);
   }
-  
+
+  /**
+   * Sets the preview mode of the Markdown component.
+   *
+   * @param previewMode the preview mode to be used in the Markdown component
+   */
+  public void setPreview(PreviewMode previewMode) {
+    this.previewMode = previewMode;
+    setState("previewMode", previewMode.getValue());
+  }
+
+ /**
+   * Gets the preview mode of the Markdown component.
+   *
+   * @return the preview mode of the Markdown component
+   */
+  public PreviewMode getPreviewMode() {
+    return this.previewMode;
+  }
+
   /**
    * Adds the specified listener for the content change event.
    * 

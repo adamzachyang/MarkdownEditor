@@ -85,17 +85,19 @@ const Code = ({ inline, children = [], className, ...props }) => {
 class MarkdownEditorElement extends ReactAdapterElement {
 
     protected override render(hooks: RenderHooks): ReactElement | null {
-      const [content, setContent] = hooks.useState<string>("content"); 
+      const [content, setContent] = hooks.useState<string>("content");
       const [placeholder] = hooks.useState<string>("placeholder");
       const [maxLength] = hooks.useState<number>("maxLength");
-      
-      return <MDEditor visibleDragbar={false} 
-                        value={content} 
-                        onChange={setContent} 
+      const [previewMode] = hooks.useState<string>("previewMode");
+
+      return <MDEditor visibleDragbar={false}
+                        value={content}
+                        onChange={setContent}
                         textareaProps={{
                           placeholder: placeholder,
                           maxLength: maxLength
                         }}
+                        preview={previewMode}
                         previewOptions={{
                               rehypePlugins: [[rehypeSanitize]],
                               components: {
@@ -105,5 +107,5 @@ class MarkdownEditorElement extends ReactAdapterElement {
                         />;
     }
 }
-  
+
 customElements.define("markdown-editor",MarkdownEditorElement);
