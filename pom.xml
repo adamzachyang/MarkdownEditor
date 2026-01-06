@@ -4,13 +4,13 @@
 
     <groupId>com.flowingcode.vaadin.addons</groupId>
     <artifactId>markdown-editor-addon</artifactId>
-    <version>2.0.4-SNAPSHOT</version>
+    <version>2.0.4</version>
     <name>Markdown Editor Add-on</name>
     <description>Markdown Editor for Vaadin Flow</description>
     <url>https://www.flowingcode.com/en/open-source/</url>
 
     <properties>
-        <vaadin.version>24.4.6</vaadin.version>
+        <vaadin.version>25.0.0</vaadin.version>
         <selenium.version>4.10.0</selenium.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
